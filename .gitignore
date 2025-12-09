@@ -1,2 +1,10 @@
-# Ignore macOS system files
+# Operating System Files
 .DS_Store
+
+# IDE/Editor Files
+.vscode/
+.cursor/
+
+# Development Files
+memory-bank/
+references/
