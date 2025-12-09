@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "custom": true,
+      "customGradient": true,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "link": true,
+      "text": true,
+      "background": true,
+      "palette": [
+        { "name": "White", "slug": "white", "color": "hsl(0, 0%, 100%)" },
+        { "name": "Gray 100", "slug": "gray-100", "color": "hsl(0, 2%, 79%)" },
+        { "name": "Brand 400", "slug": "brand-400", "color": "hsl(25, 88%, 75%)" },
+        { "name": "Brand 500", "slug": "brand-500", "color": "hsl(25, 88%, 66%)" },
+        { "name": "Green 400", "slug": "green-400", "color": "hsl(143, 19%, 49%)" },
+        { "name": "Green 500", "slug": "green-500", "color": "hsl(143, 38%, 37%)" },
+        { "name": "Green 600", "slug": "green-600", "color": "hsl(145, 29%, 19%)" },
+        { "name": "Brown 500", "slug": "brown-500", "color": "hsl(10, 5%, 25%)" },
+        { "name": "Brown 600", "slug": "brown-600", "color": "hsl(9, 7%, 21%)" },
+        { "name": "Brown 700", "slug": "brown-700", "color": "hsl(9, 8%, 16%)" },
+        { "name": "Brown 800", "slug": "brown-800", "color": "hsl(0, 6%, 15%)" },
+        { "name": "Brown 900", "slug": "brown-900", "color": "hsl(0, 6%, 13%)" },
+        { "name": "Orange 500", "slug": "orange-500", "color": "hsl(28, 43%, 28%)" },
+        { "name": "Red 500", "slug": "red-500", "color": "hsl(359, 34%, 24%)" },
+        { "name": "Teal 500", "slug": "teal-500", "color": "hsl(186, 42%, 25%)" }
+      ]
+    },
+    "typography": {
+      "fontSizes": [
+        { "name": "300", "slug": "fs-300", "size": "0.875rem" },
+        { "name": "400", "slug": "fs-400", "size": "1rem" },
+        { "name": "500", "slug": "fs-500", "size": "1.125rem" },
+        { "name": "600", "slug": "fs-600", "size": "1.25rem" },
+        { "name": "700", "slug": "fs-700", "size": "1.5rem" },
+        { "name": "800", "slug": "fs-800", "size": "2rem" },
+        { "name": "900", "slug": "fs-900", "size": "3.75rem" },
+        { "name": "1000", "slug": "fs-1000", "size": "3.75rem" }
+      ]
+    }
+  }
+}
