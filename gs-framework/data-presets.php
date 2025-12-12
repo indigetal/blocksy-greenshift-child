@@ -21,15 +21,29 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 				'options' => array(
 					array(
 						'value' => 'data-width',
-						'label' => 'Wrapper - Wide',
+						'label' => 'Wrapper Width Modifier',
 						'type'  => 'data',
-						'data'  => 'wide',
+						// Provide multiple selectable data values as an array.
+						'data'  => array( 'wide', 'narrow' ),
+
 					),
 					array(
 						'value' => 'data-padding',
 						'label' => 'Mobile Section - Vertical Spacing',
 						'type'  => 'data',
 						'data'  => 'compact',
+					),
+					array(
+						'value' => 'data-gap',
+						'label' => 'Equal Columns - Gap',
+						'type'  => 'data',
+						'data'  => array( 'large' ),
+					),
+					array(
+						'value' => 'data-vertical-alignment',
+						'label' => 'Equal Columns - Vertical Alignment',
+						'type'  => 'data',
+						'data'  => array( 'centered', 'bottom' ),
 					),
 				),
 			),

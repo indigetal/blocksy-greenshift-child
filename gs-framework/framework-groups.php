@@ -19,6 +19,7 @@ function register_framework_groups( $options ) {
 			'options' => array(
 				array( 'value' => 'wrapper',                 'label' => 'Wrapper',                 'type' => 'framework' ),
 				array( 'value' => 'section',                 'label' => 'Section',                'type' => 'framework' ),
+				array( 'value' => 'equal-columns',           'label' => 'Equal Columns',          'type' => 'framework' ),
 			),
 		),
 		array(
