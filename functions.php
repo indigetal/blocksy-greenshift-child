@@ -12,8 +12,8 @@ $gs_framework_uri = get_stylesheet_directory_uri() . '/gs-framework';
 
 if ( function_exists( 'greenshift_render_variables' ) ) {
     
-    if ( file_exists( $gs_framework_dir . '/remove-presets.php' ) ) {
-		require_once $gs_framework_dir . '/remove-presets.php';
+    if ( file_exists( $gs_framework_dir . '/internal/remove-presets.php' ) ) {
+		require_once $gs_framework_dir . '/internal/remove-presets.php';
 	}
 	
 	if ( file_exists( $gs_framework_dir . '/framework-groups.php' ) ) {
@@ -28,11 +28,12 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 		require_once $gs_framework_dir . '/semantic-tokens.php';
 	}
 	
-	if ( file_exists( $gs_framework_dir . '/color-token-swatches.php' ) ) {
-		require_once $gs_framework_dir . '/color-token-swatches.php';
+	if ( file_exists( $gs_framework_dir . '/internal/color-token-swatches.php' ) ) {
+		require_once $gs_framework_dir . '/internal/color-token-swatches.php';
 	}
 
 	// enqueue framework CSS if present
+	// Priority 999 ensures it loads after Blocksy's dynamic styles
 	if ( file_exists( $gs_framework_dir . '/framework-groups.css' ) ) {
 		add_action( 'wp_enqueue_scripts', function () use ( $gs_framework_uri, $gs_framework_dir ) {
 			wp_enqueue_style(
@@ -42,6 +43,6 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 				filemtime( $gs_framework_dir . '/framework-groups.css' ),
 				'all'
 			);
-		}, 20 );
+		}, 999 );
 	}
 }

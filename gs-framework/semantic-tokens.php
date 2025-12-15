@@ -162,26 +162,35 @@ if ( ! function_exists( 'base_semantic_tokens' ) ) {
         'group' => 'size'
     );
 
+    // Font-Size Aliases
+    $variables[] = array(
+        'label' => 'Section Title',
+        'value' => 'var(--section-title)',
+        'variable' => '--section-title',
+        'variable_value' => 'var(--font-size-heading-regular)',
+        'group' => 'size'
+    );
+
     // Border radius
     $variables[] = array(
         'label' => 'Radius — Small',
         'value' => 'var(--border-radius-1)',
         'variable' => '--border-radius-1',
-        'variable_value' => 'var(--border-radius-1)',
+        'variable_value' => '0.25rem',
         'group' => 'radius'
     );
     $variables[] = array(
         'label' => 'Radius — Medium',
         'value' => 'var(--border-radius-2)',
         'variable' => '--border-radius-2',
-        'variable_value' => 'var(--border-radius-2)',
+        'variable_value' => '0.5rem',
         'group' => 'radius'
     );
     $variables[] = array(
         'label' => 'Radius — Large',
         'value' => 'var(--border-radius-3)',
         'variable' => '--border-radius-3',
-        'variable_value' => 'var(--border-radius-3)',
+        'variable_value' => '0.75rem',
         'group' => 'radius'
     );
 

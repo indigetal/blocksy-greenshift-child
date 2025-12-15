@@ -11,6 +11,7 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 	 * Register "Modifiers & Exceptions" preset group containing data-attribute presets.
 	 *
 	 * These are data presets: Greenshift will write the `data-*` attribute on the element.
+	 * Note: Arrays with one item cause a GreenShift rendering bug.
 	 * Per GreenShift documentation, return only the custom groups - GreenShift handles merging.
 	 */
 	add_filter( 'greenshift_preset_classes', 'register_modifiers_exceptions' );
@@ -21,7 +22,7 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 				'options' => array(
 					array(
 						'value' => 'data-width',
-						'label' => 'Wrapper Width Modifier',
+						'label' => 'Wrapper - Width',
 						'type'  => 'data',
 						// Provide multiple selectable data values as an array.
 						'data'  => array( 'wide', 'narrow' ),
@@ -29,7 +30,7 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 					),
 					array(
 						'value' => 'data-padding',
-						'label' => 'Mobile Section - Vertical Spacing',
+						'label' => 'Section - Vertical Padding',
 						'type'  => 'data',
 						'data'  => 'compact',
 					),
@@ -37,7 +38,7 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 						'value' => 'data-gap',
 						'label' => 'Equal Columns - Gap',
 						'type'  => 'data',
-						'data'  => array( 'large' ),
+						'data'  => 'large',
 					),
 					array(
 						'value' => 'data-vertical-alignment',
