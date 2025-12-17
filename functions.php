@@ -31,6 +31,10 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 	if ( file_exists( $gs_framework_dir . '/internal/color-token-swatches.php' ) ) {
 		require_once $gs_framework_dir . '/internal/color-token-swatches.php';
 	}
+	
+	if ( file_exists( $gs_framework_dir . '/block-variations.php' ) ) {
+		require_once $gs_framework_dir . '/block-variations.php';
+	}
 
 	// enqueue framework CSS if present
 	// Priority 999 ensures it loads after Blocksy's dynamic styles

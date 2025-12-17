@@ -22,16 +22,21 @@ function register_framework_groups( $options ) {
 				array( 'value' => 'equal-columns',           'label' => 'Equal Columns',          'type' => 'framework' ),
 				array( 'value' => 'flow',					 'label' => 'Content Flow',           'type' => 'framework' ),
 				array( 'value' => 'grid-flow',				 'label' => 'Grid Flow',			  'type' => 'framework' ),
+				array( 'value' => 'grid-auto-fill',				 'label' => 'Section - Grid Auto Fill',			  'type' => 'framework' ),
+				array( 'value' => 'flex-group-spacing',				 'label' => 'Flex Group Spacing',			  'type' => 'framework' ),
 			),
 		),
 		array(
 			'label'   => esc_html__( 'Components', 'blocksy-greenshift-child' ),
 			'options' => array(
+				array( 'value' => 'button',                 'label' => 'Button',                 'type' => 'framework' ),
 				array( 'value' => 'hero',                 'label' => 'Hero',                 'type' => 'framework' ),
 				array( 'value' => 'hero__title',                 'label' => 'Hero Title',                 'type' => 'framework' ),
 				array( 'value' => 'card',                 'label' => 'Card',                 'type' => 'framework' ),
 				array( 'value' => 'card__title',                 'label' => 'Card Title',                 'type' => 'framework' ),
-				array( 'value' => 'button',                 'label' => 'Button',                 'type' => 'framework' ),
+				array( 'value' => 'tag-list',                 'label' => 'Card - Tag List',                 'type' => 'framework' ),
+				array( 'value' => 'card__note',                 'label' => 'Card Note',                 'type' => 'framework' ),
+				array( 'value' => 'faq-bento-grid',                 'label' => 'FAQ Bento Grid',                 'type' => 'framework' ),
 			),
 		),
 		array(
