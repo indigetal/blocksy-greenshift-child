@@ -12,9 +12,10 @@ $gs_framework_uri = get_stylesheet_directory_uri() . '/gs-framework';
 
 if ( function_exists( 'greenshift_render_variables' ) ) {
     
+	/* If you want to remove GreenShift's presets for a project, uncomment the below block of code:
     if ( file_exists( $gs_framework_dir . '/internal/remove-presets.php' ) ) {
 		require_once $gs_framework_dir . '/internal/remove-presets.php';
-	}
+	} */
 	
 	if ( file_exists( $gs_framework_dir . '/framework-groups.php' ) ) {
 		require_once $gs_framework_dir . '/framework-groups.php';
