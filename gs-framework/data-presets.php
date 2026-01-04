@@ -46,6 +46,18 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 						'type'  => 'data',
 						'data'  => array( 'centered', 'bottom' ),
 					),
+					array(
+						'value' => 'data-justify',
+						'label' => 'Flex Group - Justify',
+						'type'  => 'data',
+						'data'  => 'center',
+					),
+					array(
+						'value' => 'data-button',
+						'label' => 'Button - Type',
+						'type'  => 'data',
+						'data'  => 'secondary',
+					),
 				),
 			),
 		);

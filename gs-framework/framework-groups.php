@@ -23,7 +23,7 @@ function register_framework_groups( $options ) {
 				array( 'value' => 'flow',					 'label' => 'Content Flow',           'type' => 'framework' ),
 				array( 'value' => 'grid-flow',				 'label' => 'Grid Flow',			  'type' => 'framework' ),
 				array( 'value' => 'grid-auto-fill',				 'label' => 'Section - Grid Auto Fill',			  'type' => 'framework' ),
-				array( 'value' => 'flex-group-spacing',				 'label' => 'Flex Group Spacing',			  'type' => 'framework' ),
+				array( 'value' => 'flex-group',				 'label' => 'Flex Group',			  'type' => 'framework' ),
 			),
 		),
 		array(
@@ -46,7 +46,7 @@ function register_framework_groups( $options ) {
 				array( 'value' => 'text-brand',             'label' => 'Text — Brand',           'type' => 'framework' ),
 				array( 'value' => 'text-high-contrast',     'label' => 'Text — High Contrast',   'type' => 'framework' ),
 				array( 'value' => 'section-title',          'label' => 'Section Title',          'type' => 'framework' ),
-				array( 'value' => 'background-base',        'label' => 'Background — Base',      'type' => 'framework' ),
+				array( 'value' => 'background-main',        'label' => 'Background — Main',      'type' => 'framework' ),
 				array( 'value' => 'background-light',       'label' => 'Background — Light',     'type' => 'framework' ),
 				array( 'value' => 'background-extra-light', 'label' => 'Background — Extra Light','type' => 'framework' ),
 				array( 'value' => 'background-dark',        'label' => 'Background — Dark',      'type' => 'framework' ),

@@ -15,11 +15,15 @@
   }
 
   /* Layout utility class that creates space between flex items */
-  .flex-group-spacing {
+  .flex-group {
     display: flex;
     flex-wrap: wrap;
     /* Use the custom property locally in a component, otherwise use the fallback */
-    gap: var(--flex-group-gap, 0.5rem);
+    gap: var(--flex-group-gap, 1.5rem);
+
+    &[data-justify="center"] {
+      justify-content: center;
+    }
   }
 
   .wrapper {
@@ -43,13 +47,13 @@
   }
 
   .section {
-    padding-block: 3.75rem !important;
+    padding-block: 6.75rem;
 
     @media (min-width: 760px) {
-      padding-block: 8rem;
+      padding-block: 11rem;
 
       &[data-padding="compact"] {
-        padding-block: 4.5rem !important;
+        padding-block: 4.5rem;
       }
     }
 
@@ -74,10 +78,7 @@
     .grid-auto-fill {
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(
-        auto-fill, 
-        minmax(min(var(--grid-auto-fill-min-column-size, 250px), 100%), 1fr)
-      );
+      grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-auto-fill-min-column-size, 250px), 100%), 1fr));
     }
   }
 
@@ -165,26 +166,26 @@
 
     @media (width > 600px) {
       grid-template-columns: repeat(2, 1fr);
-      
+
       /* 2 sets of quotation marks represent 2 rows of the grid */
       grid-template-areas:
         "card-one card-two"
         "card-three card-four";
 
-      /* alternate image placement from the top to the bottom for even cards. Avoid doing this if your card has a focusable element like a link or button. */  
+      /* alternate image placement from the top to the bottom for even cards. Avoid doing this if your card has a focusable element like a link or button. */
       .card:nth-child(even) img {
         order: 3;
       }
     }
 
     @media (width > 900px) {
-      grid-template-columns: repeat( 3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
 
       grid-template-areas:
         "card-one card-two card-four"
         "card-three card-three card-four";
 
-        /* Adjust the image size and placement in the third card to fill in the empty space */
+      /* Adjust the image size and placement in the third card to fill in the empty space */
       .card:nth-child(3) {
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -237,12 +238,22 @@
     background-color: var(--background-accent-main) !important;
     padding: 0.5rem 1rem !important;
     border-radius: var(--border-radius-1);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--background-accent-light) !important;
+      color: var(--text-high-contrast);
+    }
   }
 
-  .button:hover,
-  .button:focus-visible {
-    background: var(--background-accent-light) !important;
+  .button[data-button="secondary"] {
+    background-color: var(--text-brand-light);
     color: var(--text-high-contrast);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--text-brand);
+    }
   }
 
   select {
@@ -252,6 +263,7 @@
     padding: 0.5rem 0.5rem 0.5rem 1rem !important;
     border: 0;
     border-radius: var(--border-radius-2) !important;
+    /* .flex-group layout utility class used */
 
     /* reset theme overrides */
     width: initial !important;
@@ -259,7 +271,7 @@
   }
 
   .tag-list {
-    /* .flex-group-spacing utility used */
+    /* .flex-group layout utility class used */
 
     > li {
       font-family: var(--ff-heading);
@@ -285,6 +297,7 @@
       &[data-season="spring"] {
         --tag-background: var(--wp--preset--color--teal-500);
       }
+    }
   }
 }
 
@@ -303,8 +316,8 @@
     font-size: var(--font-size-heading-regular) !important;
   }
 
-  .background-base {
-    background-color: var(--background-base);
+  .background-main {
+    background-color: var(--background-main);
   }
   .background-light {
     background-color: var(--background-light);
