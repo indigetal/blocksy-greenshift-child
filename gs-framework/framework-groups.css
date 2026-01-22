@@ -30,21 +30,21 @@
 }
 
 @layer layout {
-  /* Selects all elements that have a direct sibling preceding them (for content flow). Added to parent element to ensure spacing between all elements. */
-  .flow > * + * {
+  /* Selects all elements that have a direct sibling preceding them (for content flow). Added to parent element to ensure spacing between all elements. Also targets Blocksy's .entry-content wrapper for blog posts. */
+  :is(.flow, .entry-content.is-layout-flow) > * + * {
     margin-block-start: var(--flow-space, 1em);
+  }
 
-    &[data-flow-space="medium"] {
-      --flow-space: 1.5em;
-    }
+  :is(.flow, .entry-content.is-layout-flow)[data-flow-space="medium"] > * + * {
+    --flow-space: 1.5em;
+  }
 
-    &[data-flow-space="large"] {
-      --flow-space: 2.5em;
-    }
+  :is(.flow, .entry-content.is-layout-flow)[data-flow-space="large"] > * + * {
+    --flow-space: 2.5em;
+  }
 
-    &[data-flow-space="xlarge"] {
-      --flow-space: 3em;
-    }
+  :is(.flow, .entry-content.is-layout-flow)[data-flow-space="xlarge"] > * + * {
+    --flow-space: 3em;
   }
 
   .grid-flow {
