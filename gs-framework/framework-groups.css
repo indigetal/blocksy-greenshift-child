@@ -1,9 +1,50 @@
-@layer reset, base, layout, components, utilities;
+@layer blocksy, reset, base, layout, components, utilities;
+
+@media (width > 760px) {
+  /* Responsive font sizes for Desktop - this is not nested in a layer group and root:root is used in order to override the values assigned in theme.json */
+  :root:root {
+    --wp--preset--font-size--fs-300: 0.875rem;
+    --wp--preset--font-size--fs-400: 1rem;
+    --wp--preset--font-size--fs-500: 1.125rem;
+    --wp--preset--font-size--fs-600: 1.25rem;
+    --wp--preset--font-size--fs-700: 1.5rem;
+    --wp--preset--font-size--fs-800: 2rem;
+    --wp--preset--font-size--fs-900: 3rem;
+    --wp--preset--font-size--fs-1000: 3.75rem;
+  }
+}
+
+@layer base {
+  :root {
+    /* 
+    * Generate relative and perceptually scaled variations of a base color set in theme.json. 
+    * These can then be aliased by semantic variables in semantic-tokens.php, just as you 
+    * would with --wp--preset--color variables. 
+    * See https://piccalil.li/blog/a-pragmatic-guide-to-modern-css-colours-part-one/ 
+    */
+
+    /* Example:
+    --green-300: oklch(from var(--wp--preset--color--green-500) calc(l + 0.055) calc(c * 0.09) calc(h - 17)); 
+    */
+  }
+}
 
 @layer layout {
   /* Selects all elements that have a direct sibling preceding them (for content flow). Added to parent element to ensure spacing between all elements. */
   .flow > * + * {
     margin-block-start: var(--flow-space, 1em);
+
+    &[data-flow-space="medium"] {
+      --flow-space: 1.5em;
+    }
+
+    &[data-flow-space="large"] {
+      --flow-space: 2.5em;
+    }
+
+    &[data-flow-space="xlarge"] {
+      --flow-space: 3em;
+    }
   }
 
   .grid-flow {
@@ -47,10 +88,10 @@
   }
 
   .section {
-    padding-block: 6.75rem;
+    padding-block: 3.75rem;
 
     @media (min-width: 760px) {
-      padding-block: 11rem;
+      padding-block: 8rem;
 
       &[data-padding="compact"] {
         padding-block: 4.5rem;
@@ -58,27 +99,24 @@
     }
 
     /* 
-      * auto-fit or auto-fill. Auto-fit makes grid cells stretch to fill available space
-      * while Auto-fill creates empty grid cells when there are fewer items than the 
-      * defined number of columns. Auto-fill maintains the original grid structure even
-      * with fewer content items than the number of columns. 
-      */
-    /*  .grid-auto-fit {
-      --auto-fit-min-col-size: 250px;
+      * Auto-fit makes grid cells stretch to fill available space while Auto-fill 
+      * creates empty grid cells when there are fewer items than the defined 
+      * number of columns. Auto-fill maintains the original grid structure even
+      * with fewer content items than the number of columns. See https://www.youtube.com/watch?v=OZ6qKoq7RJU
+    */
+    .grid-auto-fit {
+      /* --min-col-size: 500px; */
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(min(var(--grid-auto-fit-min-column-size, 100%), 1fr), 1fr)
-      );
+      grid-template-columns: repeat(auto-fit, minmax(min(var(--min-col-size, 300px), 100%), 1fr));
     }
-    */
 
     /* Leaves empty cells if the content is smaller than the minimum column size. */
     .grid-auto-fill {
+      /* --min-col-size: 500px; */
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-auto-fill-min-column-size, 250px), 100%), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(var(--min-col-size, 300px), 100%), 1fr));
     }
   }
 
@@ -116,7 +154,7 @@
   }
 
   .hero__title {
-    font-size: var(--font-size-heading-lg) !important;
+    font-size: var(--font-size-heading-xl);
 
     > span {
       display: block;
@@ -216,15 +254,15 @@
 
   .card__title {
     /* Use the custom property locally in a component, otherwise use the fallback */
-    font-size: var(--card-title-font-size, var(--font-size-heading-sm)) !important;
+    font-size: var(--card-title-font-size, var(--font-size-heading-sm));
 
-    color: var(--card-title-color, var(--text-brand)) !important;
+    color: var(--card-title-color, var(--text-brand));
   }
 
   .card__note {
-    margin-top: auto !important;
+    margin-top: auto;
     background-color: var(--background-extra-light);
-    padding: 0.75rem !important;
+    padding: 0.75rem;
     border-radius: var(--border-radius-2);
   }
 
@@ -233,15 +271,15 @@
     display: inline flex;
     cursor: pointer;
     font-family: var(--ff-heading);
-    font-weight: 700 !important;
-    font-size: var(--font-size-md) !important;
-    background-color: var(--background-accent-main) !important;
-    padding: 0.5rem 1rem !important;
+    font-weight: 700;
+    font-size: var(--font-size-md);
+    background-color: var(--background-accent-main);
+    padding: 0.5rem 1rem;
     border-radius: var(--border-radius-1);
 
     &:hover,
     &:focus-visible {
-      background: var(--background-accent-light) !important;
+      background: var(--background-accent-light);
       color: var(--text-high-contrast);
     }
   }
@@ -313,7 +351,7 @@
   }
 
   .section-title {
-    font-size: var(--font-size-heading-regular) !important;
+    font-size: var(--font-size-heading-lg);
   }
 
   .background-main {
@@ -359,11 +397,11 @@
     font-size: var(--font-size-md);
   }
   .font-size-lg {
-    font-size: var(--font-size-lg) !important;
+    font-size: var(--font-size-lg);
   }
 
   [hidden] {
-    display: none !important;
+    display: none;
   }
 
   .visually-hidden {

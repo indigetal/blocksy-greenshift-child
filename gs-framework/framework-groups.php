@@ -22,6 +22,7 @@ function register_framework_groups( $options ) {
 				array( 'value' => 'equal-columns',           'label' => 'Equal Columns',          'type' => 'framework' ),
 				array( 'value' => 'flow',					 'label' => 'Content Flow',           'type' => 'framework' ),
 				array( 'value' => 'grid-flow',				 'label' => 'Grid Flow',			  'type' => 'framework' ),
+				array( 'value' => 'grid-auto-fit',				 'label' => 'Section - Grid Auto Fit',			  'type' => 'framework' ),
 				array( 'value' => 'grid-auto-fill',				 'label' => 'Section - Grid Auto Fill',			  'type' => 'framework' ),
 				array( 'value' => 'flex-group',				 'label' => 'Flex Group',			  'type' => 'framework' ),
 			),

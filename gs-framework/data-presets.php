@@ -21,6 +21,12 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 				'label'   => esc_html__( 'Modifiers / Exceptions', 'blocksy-greenshift-child' ),
 				'options' => array(
 					array(
+						'value' => 'data-flow-space',
+						'label' => 'Content Flow - Space',
+						'type'  => 'data',
+						'data'  => array( 'medium', 'large', 'xlarge' ),
+					),
+					array(
 						'value' => 'data-width',
 						'label' => 'Wrapper - Width',
 						'type'  => 'data',

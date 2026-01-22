@@ -28,6 +28,7 @@
       ]
     },
     "typography": {
+      "fluid": false,
       "fontSizes": [
         { "name": "300", "slug": "fs-300", "size": "0.875rem" },
         { "name": "400", "slug": "fs-400", "size": "1rem" },
@@ -35,7 +36,7 @@
         { "name": "600", "slug": "fs-600", "size": "1.25rem" },
         { "name": "700", "slug": "fs-700", "size": "1.5rem" },
         { "name": "800", "slug": "fs-800", "size": "2rem" },
-        { "name": "900", "slug": "fs-900", "size": "3.75rem" },
+        { "name": "900", "slug": "fs-900", "size": "3rem" },
         { "name": "1000", "slug": "fs-1000", "size": "3.75rem" }
       ]
     }
