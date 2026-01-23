@@ -29,22 +29,29 @@
   }
 }
 
+@layer blocksy {
+  /* Flow spacing for Blocksy's blog posts - needs !important to override theme styles */
+  .entry-content.is-layout-flow > * + * {
+    margin-block-start: 1em !important;
+  }
+}
+
 @layer layout {
-  /* Selects all elements that have a direct sibling preceding them (for content flow). Added to parent element to ensure spacing between all elements. Also targets Blocksy's .entry-content wrapper for blog posts. */
-  :is(.flow, .entry-content.is-layout-flow) > * + * {
-    margin-block-start: var(--flow-space, 1em) !important;
+  /* Selects all elements that have a direct sibling preceding them (for content flow). Added to parent element to ensure spacing between all elements. */
+  .flow > * + * {
+    margin-block-start: var(--flow-space, 1em);
   }
 
-  :is(.flow, .entry-content.is-layout-flow)[data-flow-space="medium"] > * + * {
-    --flow-space: 1.5em;
-  }
-
-  :is(.flow, .entry-content.is-layout-flow)[data-flow-space="large"] > * + * {
-    --flow-space: 2.5em;
-  }
-
-  :is(.flow, .entry-content.is-layout-flow)[data-flow-space="xlarge"] > * + * {
+  .flow[data-flow-space="medium"] > * + * {
     --flow-space: 3em;
+  }
+
+  .flow[data-flow-space="large"] > * + * {
+    --flow-space: 4.5em;
+  }
+
+  .flow[data-flow-space="xlarge"] > * + * {
+    --flow-space: 6em;
   }
 
   .grid-flow {
