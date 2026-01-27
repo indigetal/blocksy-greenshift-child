@@ -69,5 +69,3 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 		);
 	}
 }
-
-

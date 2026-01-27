@@ -50,4 +50,18 @@ if ( function_exists( 'greenshift_render_variables' ) ) {
 			);
 		}, 999 );
 	}
+
+	// Enqueue data preset dropdown enhancement in the block editor.
+	// Converts comma-separated data preset values into dropdown menus.
+	if ( file_exists( $gs_framework_dir . '/internal/data-preset-dropdown.js' ) ) {
+		add_action( 'enqueue_block_editor_assets', function () use ( $gs_framework_uri, $gs_framework_dir ) {
+			wp_enqueue_script(
+				'gs-data-preset-dropdown',
+				$gs_framework_uri . '/internal/data-preset-dropdown.js',
+				array( 'wp-data', 'wp-block-editor' ),
+				filemtime( $gs_framework_dir . '/internal/data-preset-dropdown.js' ),
+				true
+			);
+		} );
+	}
 }
